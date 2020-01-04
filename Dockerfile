@@ -2,8 +2,11 @@
 FROM openjdk:8-jre-alpine
 LABEL maintainer="njrusmc@gmail.com"
 
+# Reference the VERSION argument (must come after FROM command)
+ARG VERSION
+
 # Download the specific VTL release, unzip it, and delete the original zip.
-RUN wget https://github.com/plavjanik/vtl-cli/releases/download/v0.1.1/vtl.zip && \
+RUN wget https://github.com/plavjanik/vtl-cli/releases/download/v${VERSION}/vtl.zip && \
     unzip vtl.zip && \
     rm -f vtl.zip
 
