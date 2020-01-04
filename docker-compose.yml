@@ -6,9 +6,9 @@ version: "3.7"
 # Define a single vtlcli-docker container using a bind mount
 # of the local "vtimount" directory
 services:
-  vtlcli-docker:
+  vtl:
     build: "."
-    image: "vtlcli-docker:latest"
+    image: "nickrusso42518/vtlcli-docker:latest"
     volumes:
       - type: "bind"
         source: "./vtimount"

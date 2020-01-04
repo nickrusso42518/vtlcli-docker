@@ -17,29 +17,23 @@ as it uses [VTL](https://velocity.apache.org/) for its templating system.
 Not everyone has immediate write access to DNAC, and this tool is meant to
 eliminate that barrier. However, the tool can be used for any other purpose.
 
-## Installation
-You have two options. In both cases, you'll need `docker` installed.
-
-### Pull from Dockerhub
-*Option not yet available, but coming soon*
-
-Download image from dockerhub: `docker pull nickrusso42518/vtlcli-docker`
-
-### Build from source
-You'll need `git` and `docker-compose` installed as well.
-
-1. Perform `git clone` using SSH or HTTPS.
-2. Navigate to the directory: `cd vtlcli-docker`
-3. Build the container: `docker-compose build`
-
-## Usage
+## Installation and Usage
 Follow these steps to start using the tool.
 
-1. Create bind mount directory: `mkdir vtimount`
-2. Populate `vtimount/` with files you want to access within the container.
+### Packages needed
+`docker`, `docker-compose`, and `git`
+
+### Steps
+1. Perform `git clone` using SSH or HTTPS.
+2. Navigate to the directory: `cd vtlcli-docker`
+3. Create bind mount directory: `mkdir vtimount`
+4. Populate `vtimount/` with files you want to access within the container.
    Normally this would be `*.yml` and `*.vtl` files.
-3. Run a container and enter its shell: `docker-compose run vtlcli-docker sh`
-4. View README from within the container: `cat sample/README.md`
+5. Obtain the container. Choose one of these options:
+   * Build it from local `Dockerfile` yourself: `docker-compose build`
+   * Pull from dockerhub: `docker pull nickrusso42518/vtlcli-docker`
+6. Run a container and enter its shell: `docker-compose run vtl sh`
+7. View README from within the container: `cat sample/README.md`
 
 ## Sample
 I've included a simple NTP configuration sample, which you can explore
