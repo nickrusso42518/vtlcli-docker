@@ -26,8 +26,8 @@ Follow these steps to start using the tool.
 ### Steps
 1. Perform `git clone` using SSH or HTTPS.
 2. Navigate to the directory: `cd vtlcli-docker`
-3. Create bind mount directory: `mkdir vtimount`
-4. Populate `vtimount/` with files you want to access within the container.
+3. Create bind mount directory: `mkdir vtlmount`
+4. Populate `vtlmount/` with files you want to access within the container.
    Normally this would be `*.yml` and `*.vtl` files.
 5. Obtain the container. Choose one of these options:
    * Build it from local `Dockerfile` yourself: `docker-compose build`
