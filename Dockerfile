@@ -12,3 +12,10 @@ RUN wget https://github.com/plavjanik/vtl-cli/releases/download/v${VERSION}/vtl.
 
 # Copy the sample directory into the container.
 COPY sample /sample
+
+# ** EXAMPLE BUILD COMMAND **
+# VERSION=0.1.1
+# docker build \
+#   --build-arg VERSION=$VERSION \
+#   -t nickrusso42518/vtlcli-docker:$VERSION \
+#   -t nickrusso42518/vtlcli-docker:latest .
