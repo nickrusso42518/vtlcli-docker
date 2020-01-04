@@ -17,23 +17,27 @@ as it uses [VTL](https://velocity.apache.org/) for its templating system.
 Not everyone has immediate write access to DNAC, and this tool is meant to
 eliminate that barrier. However, the tool can be used for any other purpose.
 
-## Installation and Usage
-Follow these steps to start using the tool.
+## Getting Started
+Run the following commands below to get started. Be sure
+you have `docker` installed.
+```
+# Download the image using your desired version tag
+docker pull nickrusso42518/vtlcli-docker:latest
 
-### Packages needed
-`docker`, `docker-compose`, and `git`
+# Create the bind mount directory
+mkdir vtlmount/
 
-### Steps
-1. Perform `git clone` using SSH or HTTPS.
-2. Navigate to the directory: `cd vtlcli-docker`
-3. Create bind mount directory: `mkdir vtlmount`
-4. Populate `vtlmount/` with files you want to access within the container.
-   Normally this would be `*.yml` and `*.vtl` files.
-5. Obtain the container. Choose one of these options:
-   * Build it from local `Dockerfile` yourself: `docker-compose build`
-   * Pull from dockerhub: `docker pull nickrusso42518/vtlcli-docker`
-6. Run a container and enter its shell: `docker-compose run vtl sh`
-7. View README from within the container: `cat sample/README.md`
+# Optionally populate vtlmount/ with variable and template files
+
+# Run a new container, again using your desired version tag
+docker container run -it \
+  --mount type=bind,source="$(pwd)"/vtlmount,target=/vtlmount \
+  nickrusso42518/vtlcli-docker:latest
+
+# You should be in the container shell now
+
+cat sample/README.md
+```
 
 ## Sample
 I've included a simple NTP configuration sample, which you can explore
