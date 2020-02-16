@@ -60,5 +60,5 @@ ntp server 192.0.2.2 key 2
 Put your template file (`.vtl`) and variable file (`.yml`) in your current
 working directory inside the `vtlmount` folder you created. When you enter
 the docker container you can reference them using the following syntax:
-`./vtl -y vtlmount/my_vars.yml my_template.vtl`
+`./vtl -y vtlmount/my_vars.yml vtlmount/my_template.vtl`
 
