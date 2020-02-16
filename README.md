@@ -28,6 +28,7 @@ docker pull nickrusso42518/vtlcli-docker:latest
 mkdir vtlmount/
 
 # Optionally populate vtlmount/ with variable and template files
+# See "Using Your Own Files" for more information
 
 # Run a new container, again using your desired version tag
 docker container run -it \
@@ -55,7 +56,9 @@ ntp server 192.0.2.1 key 1
 ntp server 192.0.2.2 key 2
 ```
 
-### Using Your Own Files
-
-Put your template file (VTL) and variable file (YAML) in your current working directory inside the `vtlmount` folder you created. When you enter the docker container you can reference them using the syntax `./vtl -y vtlmount/MYVARS.yml MYTEMPLATE.vtl`. 
+## Using Your Own Files
+Put your template file (`.vtl`) and variable file (`.yml`) in your current
+working directory inside the `vtlmount` folder you created. When you enter
+the docker container you can reference them using the following syntax:
+`./vtl -y vtlmount/my_vars.yml my_template.vtl`
 

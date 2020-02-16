@@ -1,6 +1,7 @@
 ---
 ntp:
   authenticate: true
+  logging: false
   auth_keys:
     - id: 1
       text: "secretKey111"
