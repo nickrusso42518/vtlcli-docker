@@ -1,4 +1,5 @@
 #!/bin/bash
+# Used by dockerhub to trigger the automated build
 docker build \
   --build-arg VTL_VER=$VTL_VER \
   -t nickrusso42518/vtlcli-docker:$VTL_VER \
